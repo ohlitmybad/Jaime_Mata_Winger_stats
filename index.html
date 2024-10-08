@@ -1,0 +1,1931 @@
+
+<!DOCTYPE html>
+<html>
+<head>	
+  
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Jaime Mata Football Stats and Visuals | DataMB</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://datamb.football/favicon.ico">
+  <meta name="description" content="Jaime Mata 2024/25 data profile compared to wingers and attacking midfielders in Europe's Top 7 Leagues. Check out his statistics with our radar chart and plots, or compare Jaime Mata to other players using our data comparison tool.">
+  <meta property="og:image" content="https://datamb.football/vignettes/profile.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@DataMB_">
+  <meta name="twitter:title" content="Jaime Mata | DataMB">
+  <meta name="twitter:image" content="https://datamb.football/vignettes/profile.png">
+  <script>
+    (function() {
+        var width = window.innerWidth;
+        var viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+  if (width < 681) {
+          
+        var initialScale = width / 681;
+  viewportMeta.setAttribute('content', 'width=device-width, initial-scale=' + initialScale + ', user-scalable=no');
+  } else {
+              var fixedScale = 1;
+    viewportMeta.setAttribute('content', 'width=device-width, initial-scale=' + fixedScale + ', user-scalable=no');
+  
+    }
+      } 
+  })();
+  </script>
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+  
+
+
+<style>
+
+
+
+h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .search-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        
+        #searchButton {
+    padding: 10px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    width: 40px; /* Set the width and height to the same value for a round button */
+    height: 40px;
+    border-radius: 50%; /* Make the button round by setting border-radius to 50% of the size */
+    cursor: pointer;
+    font-size: 20px; /* Increase the text size */
+}
+
+
+.search-input-modal {
+    display: none;
+    position: fixed; /* Change this to "fixed" to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Increase opacity for better obscuring */
+    z-index: 999; /* Ensure it's above other elements */
+}
+
+.search-input-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    z-index: 1000; /* Make sure it's on top of the modal background */
+}
+
+        
+#searchInput {
+            width: 340px;
+            padding: 12px;
+            border: 3px solid #ccc;
+            border-radius: 4px;
+            font-size: 19px;
+            outline: none;
+        }
+
+        #autocompleteBox {
+            width: 360px;
+            max-height: 150px;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+
+
+        #autocompleteBox ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #autocompleteBox li {
+            margin: 0;
+            padding: 5px;
+        }
+
+        #autocompleteBox {
+            line-height: 2; /* Adjust the value as needed to control line spacing */
+            text-align: center !important;
+
+        }
+
+        #autocompleteBox a {
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            text-align: center !important;
+            color: #333 !important;
+            cursor: pointer; /* Add pointer cursor style to the anchor element */
+        }
+
+        #autocompleteBox li:hover {
+            background-color: #F0F0F0;
+        }
+
+
+body {
+  margin: 0 auto;
+}
+
+
+body, html {
+
+  background-color: #ffffff !important;
+}
+
+.header {
+  font-family: system-ui;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+background: #ececec;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo img {
+  width: 40px;
+  height: 40px;
+opacity: 0.84;
+}
+
+.header .logo-text {
+  margin-left: 10px;
+  font-size: 20px;
+color: #444444;
+  font-weight: 600;
+}
+
+.header .navigation {
+  display: center;
+  align-items: center;
+  word-spacing: 1.3em; /* Adjust the spacing as needed */
+}
+
+@media only screen and (min-width: 1090px) {
+  .header .navigation a:first-child {
+    margin-left: 100px; /* Adjust the margin as needed */
+  }
+}
+
+
+
+.header .button {
+  margin: 0 10px;
+  padding: 0px 20px;
+  color: #444444;
+  text-decoration: none;
+  border-radius: 0px;
+font-size: 18px;
+}
+
+header a {
+      color: #444444;
+      text-decoration: none;
+
+    }
+
+.header .twitter-link svg {
+  width: 25px;
+  height: 24px;
+  fill: #444444;
+}
+
+
+
+
+#searchInput1 {
+display: none;
+}
+
+
+
+
+#searchButton1 {
+  display: none;
+
+}
+
+
+
+#twitterSvg {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 25px !important;
+  height: 24px !important;
+}
+
+
+#select-league {
+  display: none;
+}
+
+
+#select-x,
+#select-y {
+  display: none;
+}
+
+
+.footer {
+  font-family: system-ui;
+  background: #F2F2F2;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.footer .logo {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .description {
+  font-size: 20px;
+  margin-bottom: 0px;
+color: black;
+}
+
+.footer .info {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.footer .divider {
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin: 25px 0;
+  opacity: 0.2;
+}
+
+.footer .sub-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .sub-footer .terms,
+.footer .sub-footer .privacy,
+.footer .sub-footer .glossary {
+font-size: 17px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  flex-wrap: wrap; /* Add flex-wrap property to wrap the content on smaller screens */
+}
+
+.google-play-container {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: flex-end; /* Align items to the right */
+  margin-top: -20px; /* Adjust the margin-top to remove the space */
+}
+
+.google-play-container img {
+  width: 182px;
+  height: 70px;
+}
+
+.description,
+.info,
+.divider,
+.sub-footer {
+  flex-basis: 100%;
+color: black;
+}
+
+.footer p {
+  margin-bottom: 0; 
+}
+
+
+
+/* STYLE ELEMENTS BELOW */
+
+
+
+
+
+  
+svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+
+
+  td.black {
+    color: black !important;
+  }
+  td.red {
+    color: red !important;
+  }
+  td.green {
+    color: green !important;
+  }
+text {
+  font-family: Arial;
+}
+
+.result-color-blue {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+
+.radar-button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 4px solid #135eb6; /* Add a border */
+  border-radius: 35px;
+  color: #0b57d0;
+  width: 145px;
+  height: 58px;
+  position: relative;
+  top: 566px;
+  left: 933px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 9999; /* Set a high z-index value */
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+}
+
+.plot-button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 4px solid #135eb6; /* Add a border */
+  border-radius: 35px;
+  color: #0b57d0;
+  width: 145px;
+  height: 58px;
+  position: relative;
+  top: 1125px;
+  left: 472px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 9999; /* Set a high z-index value */
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;  
+}
+
+
+.metrics-table a {
+  text-decoration: none; /* Remove underlining */
+  color: purple; /* Set link color to purple */
+}
+  
+
+
+
+.metrics-table th {
+  background-color: #ececec;
+  color: #444444;
+  font-weight: bold;
+  padding: 9px;
+  text-align: left;
+}
+
+.metrics-table td {
+  padding: 9px;
+  border: 1px solid #ccc;
+}
+
+.metrics-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.metrics-table tr:hover {
+  background-color: #ddd;
+}
+.metrics-table tr:first-child td {
+  font-size: 20px;
+}
+
+.metrics-table {
+  position: relative;
+  top : -10px;
+  left: 113px;
+  width: 520px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-collapse: collapse;
+}
+
+  #output {
+  position: relative;
+  top: -840px;
+  left: 203.4px;
+
+  background-color: #FFFFFF; /* Background color */
+  padding: 15px; /* Add some padding */
+  border: 4px solid #c4eed1; /* Add a border */
+  border-radius: 12px; /* Add rounded corners */
+  font-size: 17px; /* Set the font size */
+  width: 300px;
+  color: #333; /* Text color */
+  font-family: Arial, sans-serif; /* Choose a font-family */
+  text-align: center; /* Center-align text */
+  line-height: 1.5; /* Set line height */
+}
+#output a {
+  text-decoration: none; /* Remove underlining */
+  color: #3062FB; /* Set link color to purple */
+}
+
+circle.highlighted {
+  stroke: #ff00ff;
+  stroke-width: 3px;
+}
+
+  
+#scatter-plot {
+  position: relative;
+  top: -430px; /* Adjust the top position */
+  left: 674px; /* Adjust the left position */
+}
+#scatter-plot-2 {
+  position: relative;
+  top: -850px; /* Adjust the top position */
+  left: 74px; /* Adjust the left position */
+}
+
+#mySvg {
+  position: relative;
+  top: -551px;
+  left: 737px;
+  width: 520px;
+  height: 520px;
+}
+.parent-container1 {
+    position: relative;
+}
+
+
+.container {
+    position: absolute;
+    top: -27.3px;
+  left: 230.8px;
+}
+
+#myOtherSvg {
+  position: absolute;
+  top: -504px;
+  left: 524px;
+}
+
+
+@media screen and (max-width: 1090px) {
+  #scatter-plot {
+    position: relative;
+    top: -90px;
+    left: 37px;
+  }
+  #scatter-plot-2 {
+    position: relative;
+    top: -122px;
+    left: 37px;
+  }
+
+  #output {
+  position: relative;
+  top: 50px;
+  left: 178px;
+}
+
+  .metrics-table {
+  position: relative;
+  top: -133px;
+  left:82px;
+  width: 520px;
+}
+  
+  #mySvg {
+    position: relative;
+    top: -122px;
+    left: 89px;
+  }
+
+  .container {
+    position: relative;
+    top: 276px;
+  left: 0px;
+}
+
+#myOtherSvg {
+  width: 100%; /* Adjust width to fit screen */
+  max-width: 500px; /* Limit maximum width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center the SVG horizontally */
+    top: -904px;
+    left: 107px;
+}
+
+.radar-button {
+    position:relative;
+  top: 997px;
+  left: 275px;
+}
+
+.plot-button {
+    position:relative;
+  top: 1848px;
+  left: 130px;
+  margin-top:100px;
+}
+}
+
+
+#percentile-text span {
+  color: blue;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+#plot-text span {
+  color: blue;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#plot-text2 {
+  position: absolute;
+  top: 1135px;
+  left: 950px;
+}
+
+#plot-text2 span {
+  color: blue;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.header-row {
+  color: #3a3a3a; /* Text color */
+  font-size: 20px; /* Adjust the font size */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: 20px; /* Add some margin to separate it from the player rows */
+  /* Add any other styles you want for the header row */
+  border-bottom: 2px solid #3a3a3a; /* Add border with desired thickness and color */
+}
+
+
+</style>
+
+  
+  </style>
+
+
+
+<header class="header">
+  <div class="logo">
+    <a href="http://datamb.football">
+        <img src="https://i.imgur.com/UurMbGS.png" alt="Jaime Mata football statistics and data visuals. 2024/25 Jaime Mata player data profile compared to top 7 league players. Radar comparison and plot charts" /></a>
+    <div class="logo-text"><a href="http://datamb.football">DataMB</a></div>
+  </div>
+  <nav class="navigation">
+    <a href="http://datamb.football/radars/" class="button">Compare</a>
+    <a href="http://datamb.football/join/" class="button">Pro</a>
+    <a href="http://datamb.football/glossary/" class="button">Guide</a>
+  </nav>
+  <div class="search-container">
+    <button id="searchButton"><iconify-icon icon="ion:search-outline"></iconify-icon></button>
+</div>
+  <a href="https://twitter.com/datamb_" target="_blank" class="twitter-link">
+    <svg id="twitterSvg" width="25" height="24" fill="#bcbcbc" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  </a>
+</header>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7677714701428206"
+     crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PSBMXX80EF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PSBMXX80EF');
+</script>
+
+<body>
+
+
+  <a href="https://datamb.football/wingers/" target="_top" rel="noopener noreferrer">
+    <button class="radar-button" role="button">Compare wingers</button></a>
+    <a href="https://datamb.football/join/" target="_top" rel="noopener noreferrer">
+      <button class="plot-button" role="button">Plot more metrics</button></a>
+
+<div class="search-input-modal" id="searchInputModal">
+<div class="search-input-container">
+    <input type="text" id="searchInput" placeholder="Enter a team or player name...">
+    <div id="autocompleteBox"></div>
+</div>
+</div>
+
+
+<script>const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://datamb.football/database/searchbar.csv', false); // false for synchronous request
+  xhr.send(null);
+  
+  let dataCSV = xhr.responseText;
+
+const _0x5a5c2d=_0x5142;(function(_0x4ae5e2,_0x171055){const _0x1f5ab4=_0x5142,_0x4cdb37=_0x4ae5e2();while(!![]){try{const _0x3afa22=parseInt(_0x1f5ab4(0xa8))/0x1*(-parseInt(_0x1f5ab4(0xb6))/0x2)+parseInt(_0x1f5ab4(0xbb))/0x3+-parseInt(_0x1f5ab4(0x9e))/0x4*(parseInt(_0x1f5ab4(0xa2))/0x5)+parseInt(_0x1f5ab4(0xae))/0x6+parseInt(_0x1f5ab4(0xbc))/0x7+-parseInt(_0x1f5ab4(0xaa))/0x8*(-parseInt(_0x1f5ab4(0xa0))/0x9)+-parseInt(_0x1f5ab4(0xbe))/0xa*(parseInt(_0x1f5ab4(0xab))/0xb);if(_0x3afa22===_0x171055)break;else _0x4cdb37['push'](_0x4cdb37['shift']());}catch(_0x1427be){_0x4cdb37['push'](_0x4cdb37['shift']());}}}(_0x52bb,0x59fa0));const dataLines=dataCSV[_0x5a5c2d(0xb5)]('\x0a'),searchButton=document[_0x5a5c2d(0xa5)](_0x5a5c2d(0xa1)),searchInputModal=document[_0x5a5c2d(0xa5)]('searchInputModal'),searchInput=document[_0x5a5c2d(0xa5)](_0x5a5c2d(0xc0)),autocompleteBox=document[_0x5a5c2d(0xa5)](_0x5a5c2d(0xb3)),data1=dataLines['map'](_0x25b9ec=>{const _0x188cb6=_0x5a5c2d,[_0x37829c,_0x135ccf]=_0x25b9ec[_0x188cb6(0xb5)](',');return{'name':_0x37829c,'link':_0x135ccf};});function _0x5142(_0x91cc0a,_0x361212){const _0x52bb26=_0x52bb();return _0x5142=function(_0x514259,_0x37adb4){_0x514259=_0x514259-0x99;let _0x29d9f9=_0x52bb26[_0x514259];return _0x29d9f9;},_0x5142(_0x91cc0a,_0x361212);}function _0x52bb(){const _0x3bd6c6=['replace','split','45174fxMLYv','appendChild','value','target','includes','501672VaVVkL','4952297iMiCMK','innerHTML','1488890idHbOF','trim','searchInput','input','addEventListener','link','style','block','1931500nwUXxJ','filter','756cBmWBX','searchButton','5JjKGuX','textContent','NFD','getElementById','normalize','name','6FNylug','display','9816GfedBU','44MmjqNG','createElement','click','3628404umwpKQ','toLowerCase','none','forEach','length','autocompleteBox'];_0x52bb=function(){return _0x3bd6c6;};return _0x52bb();}function removeDiacritics(_0x464131){const _0xe0c2fa=_0x5a5c2d;return _0x464131[_0xe0c2fa(0xa6)](_0xe0c2fa(0xa4))[_0xe0c2fa(0xb4)](/[\u0300-\u036f]/g,'');}function search2(_0x394513){const _0x949ea9=_0x5a5c2d;autocompleteBox[_0x949ea9(0xbd)]='';const _0x339607=removeDiacritics(_0x394513)[_0x949ea9(0xb4)](/[^\w\s]/g,'')[_0x949ea9(0xaf)](),_0x4cdd40=data1[_0x949ea9(0x9f)](_0x264779=>{const _0x40cc7d=_0x949ea9,_0x405e2a=removeDiacritics(_0x264779['name'])[_0x40cc7d(0xb4)](/[^\w\s]/g,'')[_0x40cc7d(0xaf)]();return _0x405e2a[_0x40cc7d(0xba)](_0x339607);});if(_0x4cdd40[_0x949ea9(0xb2)]===0x0){autocompleteBox[_0x949ea9(0x9c)]['display']=_0x949ea9(0xb0);return;}_0x4cdd40[_0x949ea9(0xb1)](_0x56128b=>{const _0x282f6f=_0x949ea9,_0x48093f=document[_0x282f6f(0xac)]('div'),_0x1b2914=document['createElement']('a');_0x1b2914['href']=_0x56128b[_0x282f6f(0x9b)],_0x1b2914[_0x282f6f(0xa3)]=_0x56128b[_0x282f6f(0xa7)],_0x48093f[_0x282f6f(0xb7)](_0x1b2914),autocompleteBox[_0x282f6f(0xb7)](_0x48093f);}),autocompleteBox['style'][_0x949ea9(0xa9)]=_0x949ea9(0x9d);}searchButton[_0x5a5c2d(0x9a)]('click',()=>{const _0x525d6c=_0x5a5c2d;searchInputModal[_0x525d6c(0x9c)][_0x525d6c(0xa9)]=_0x525d6c(0x9d);}),searchInput['addEventListener'](_0x5a5c2d(0x99),()=>{const _0x2e034c=_0x5a5c2d,_0x330e2e=searchInput[_0x2e034c(0xb8)];_0x330e2e[_0x2e034c(0xbf)]()===''?autocompleteBox[_0x2e034c(0x9c)][_0x2e034c(0xa9)]=_0x2e034c(0xb0):search2(_0x330e2e);}),document['addEventListener'](_0x5a5c2d(0xad),_0x697f09=>{const _0x27985e=_0x5a5c2d;_0x697f09[_0x27985e(0xb9)]===searchInputModal&&(searchInputModal[_0x27985e(0x9c)]['display']=_0x27985e(0xb0));});
+
+</script>
+
+	
+
+
+<select id="select-league" onchange="updateChart()">
+<option value="all">Top 7 Leagues</option>
+<option value="Premier League">Premier League</option>
+<option value="La Liga">La Liga</option>
+<option value="Bundesliga">Bundesliga</option>
+<option value="Serie A">Serie A</option> 
+<option value="Ligue 1">Ligue 1</option>
+<option value="Primeira Liga">Primeira Liga</option>
+<option value="Eredivisie">Eredivisie</option>
+</select>
+
+
+ 
+
+<div id="parent-container">
+    <input type="text" id="searchInput1" class="search-bar" placeholder="" />
+    <input type="button" id="searchButton1" value="" />
+    <br />
+    <div id="resultsTable"></div>
+
+    </div>
+  
+    <div class="parent-container1">
+
+  <svg id="mySvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <g class="radar_label">
+      <text class="label" data-type="Aerial%" data-idx="0" transform="translate(145, 37.9) rotate(-1.2)">Key Passes</text>
+    </g>
+    
+    <g class="radar_label">
+      <text class="label" data-type="Long%" data-idx="6" transform="matrix(0.5, -0.86, 0.86, 0.5, 48.89, 122.28) rotate(5.87)">Assists</text>
+    </g>
+    
+    <g class="radar_label">
+      <text class="label" data-type="Passes" data-idx="5" transform="matrix(-0.38, -0.93, 0.93, -0.38, 55.38, 251.78)">xG+xA</text>
+    </g>
+    
+    <g class="radar_label">
+      <text class="label" data-type="Exits" data-idx="4" transform="translate(110.19 332.04) rotate(24.87)">NPG</text>
+    </g>
+    
+    <g class="radar_label">
+      <text class="label" data-type="Aerial" data-idx="3" transform="translate(247.96 342.7) rotate(-25.32)">Dribbles</text>
+    </g>
+    
+    <g class="radar_label">
+      <text class="label" data-type="Def Actions" data-idx="2" transform="translate(354.56 184.26) rotate(100.11)">Carries</text>
+    </g>
+    
+    <g class="radar_label">
+      <text class="label" data-type="Shotstopping" data-idx="1" transform="translate(280.42 58.68) rotate(48.09)">Off Actions</text>
+    </g>
+      
+    </svg>					
+  
+    <div class="container"> 
+  <svg id="myOtherSvg" width="500" height="500" class="radar"><g transform="translate(231.77,225.77)"><g class="axisWrapper">
+  
+  
+  <circle class="blackCircle" r="190" style="fill:none; stroke:#D3D3D3; stroke-width:1;"></circle>
+  <circle class="gridCircle" r="190" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="160" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="120" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="80" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="40" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle></g>
+  
+  
+    
+   
+  <line x1="0" y1="0" x2="9.33" y2="189.4543362" stroke="#D3D3D3" stroke-width="1" transform="translate(-9.33, -189.4543362)"></line>
+  <line x1="0" y1="0" x2="-142.0538533333333" y2="126.24" stroke="#D3D3D3" stroke-width="1" transform="translate(141.74184, -126.24)"></line>
+  <line x1="0" y1="0" x2="-187.31589333333332" y2="-32.31413333333333" stroke="#D3D3D3" stroke-width="1" transform="translate(187.5574112, 32.2528)"></line>
+  <line x1="0" y1="0" x2="-91.84497333333333" y2="-166.92245333333333" stroke="#D3D3D3" stroke-width="1" transform="translate(91.84497333333333, 166.21328)"></line>
+  <line x1="0" y1="0" x2="72.99733333333333" y2="-175.84917333333335" stroke="#D3D3D3" stroke-width="1" transform="translate(-72.99997333333334, 175.334068)"></line>
+  <line x1="0" y1="0" x2="182.73258666666666" y2="-52.67472" stroke="#D3D3D3" stroke-width="1" transform="translate(-182.7209384, 52.480128)"></line>
+  <line x1="0" y1="0" x2="154.67849333333334" y2="109.91788799999999" stroke="#D3D3D3" stroke-width="1" transform="translate(-154.6883792222, -110.017215488)"></line>
+  </div>
+  
+  <g class="radarWrapper"></g>
+  <g class="radarWrapper2"></g>
+  </g>
+  
+  
+  
+  
+  
+
+<div id="parent-container2"><svg id="scatter-plot"></svg></div>
+
+<div id="parent-container2"><svg id="scatter-plot-2"></svg></div>
+  
+  
+ 
+  
+    <script>
+  
+  
+      const csvData = `1,Jaime Mata,Las Palmas,La Liga,35,Winger,2024/25,0.02,0.0,0.0,0.17,0.0,0.0,0.05,256`;    
+
+     const _0x370593=_0x12e0;(function(_0x2dbd58,_0x41255e){const _0x1c71a3=_0x12e0,_0x28c23e=_0x2dbd58();while(!![]){try{const _0x59c456=parseInt(_0x1c71a3(0x1be))/0x1*(parseInt(_0x1c71a3(0x1a3))/0x2)+parseInt(_0x1c71a3(0x1b0))/0x3+parseInt(_0x1c71a3(0x1b6))/0x4*(parseInt(_0x1c71a3(0x1da))/0x5)+-parseInt(_0x1c71a3(0x1d3))/0x6+parseInt(_0x1c71a3(0x19e))/0x7*(-parseInt(_0x1c71a3(0x1c2))/0x8)+-parseInt(_0x1c71a3(0x1e2))/0x9*(-parseInt(_0x1c71a3(0x1dc))/0xa)+-parseInt(_0x1c71a3(0x1dd))/0xb;if(_0x59c456===_0x41255e)break;else _0x28c23e['push'](_0x28c23e['shift']());}catch(_0x22a6f0){_0x28c23e['push'](_0x28c23e['shift']());}}}(_0x1b30,0x90e33));function _0x1b30(){const _0x4748c7=['forEach','getElementById','76iCDwWK','Progressive\x20carries','9px','fillOpacity','Assists','setAttribute','table','stroke-width','71mdVviF','Club','createElement','.radarPolygon','56fnCEWh','fill','includes','appendChild','paddingLeft','radarLines\x20','metrics-table','Season','Key\x20passes','red','join','createElementNS','Expected\x20goals\x20and\x20assists','Successful\x20dribbles','querySelectorAll','radarCircle\x20','Arial,\x20sans-serif','946506SQIaOS','Offensive\x20actions','green','\x20min','querySelector','style',')\x20-\x20','272465rEEyDG','Position','2670VcnYbO','19766329jUqdhV','polyline','value','none','searchInput1','9549EGMleA','addEventListener','log','cos','polygon','0.86','classList','round','map','textContent','listStyleType','add','Age','black','.radar','class','innerHTML','http://www.w3.org/2000/svg','fontFamily','186613ztUXXD','circle','searchButton1','split','toLowerCase','8182WaNPbd','length','NFD','translate(231.77,225.77)','Non-penalty\x20goals','href','https://datamb.football/Las_Palmas_Team_stats','push','click','transform','replace','\x20percentile','resultsTable','3376941RwbrXE','points','result-color-blue','Minutes\x20played'];_0x1b30=function(){return _0x4748c7;};return _0x1b30();}const dataArray=csvData[_0x370593(0x1a1)]('\x0a')[_0x370593(0x1ea)](_0x4c1d49=>_0x4c1d49[_0x370593(0x1a1)](',')),colorClasses=[_0x370593(0x1b2)];let searchResults=[];function _0x12e0(_0x4e949a,_0x17ae07){const _0x1b3018=_0x1b30();return _0x12e0=function(_0x12e052,_0x50b426){_0x12e052=_0x12e052-0x197;let _0x12c364=_0x1b3018[_0x12e052];return _0x12c364;},_0x12e0(_0x4e949a,_0x17ae07);}function removeSpecialChars(_0x558c52){const _0x3545ef=_0x370593;return _0x558c52['normalize'](_0x3545ef(0x1a5))[_0x3545ef(0x1ad)](/[\u0300-\u036f\s]/g,'');}function search(_0x4ad848){const _0x57281d=_0x370593,_0x561886=dataArray['filter'](_0x4e3886=>removeSpecialChars(_0x4e3886[0x1][_0x57281d(0x1a2)]())[_0x57281d(0x1c4)](removeSpecialChars(_0x4ad848[_0x57281d(0x1a2)]())));return _0x561886;}function createTable(_0x40102f,_0x4e2351,_0xa1698c){const _0x321edf=_0x370593,_0x336039=document[_0x321edf(0x1b5)](_0x321edf(0x1af)),_0x1509bf=['','',_0x321edf(0x1bf),'League',_0x321edf(0x197),_0x321edf(0x1db),_0x321edf(0x1c9),_0x321edf(0x1b7),_0x321edf(0x1cf),_0x321edf(0x1a7),_0x321edf(0x1ce),_0x321edf(0x1ba),_0x321edf(0x1ca),_0x321edf(0x1d4),_0x321edf(0x1b3)],_0x9e1c8d=_0x336039[_0x321edf(0x1d7)]('th')!==null,_0x1da9ed=_0x9e1c8d?_0x336039[_0x321edf(0x1d7)](_0x321edf(0x1bc)):document['createElement'](_0x321edf(0x1bc));_0x1da9ed[_0x321edf(0x1e8)][_0x321edf(0x1ed)](_0x321edf(0x1c8));if(!_0x9e1c8d){const _0xf617e7=document['createElement']('tr');for(let _0x1519e3=0x0;_0x1519e3<_0x1509bf[_0x321edf(0x1a4)];_0x1519e3++){const _0x2d6bc5=document[_0x321edf(0x1c0)]('th');_0x2d6bc5['textContent']=_0x1509bf[_0x1519e3],_0xf617e7[_0x321edf(0x1c5)](_0x2d6bc5);}}const _0x1431ea=dataArray[_0x4e2351];for(let _0x919d92=0x1;_0x919d92<_0x1509bf['length'];_0x919d92++){const _0x157c9c=document[_0x321edf(0x1c0)]('tr'),_0xc88612=document[_0x321edf(0x1c0)]('td');_0xc88612[_0x321edf(0x1eb)]=_0x1509bf[_0x919d92],_0x157c9c[_0x321edf(0x1c5)](_0xc88612);const _0xdb0028=document[_0x321edf(0x1c0)]('td');let _0x218a61=_0x1431ea[_0x919d92];if(_0x919d92===0x5){const _0xbc5ab5=document[_0x321edf(0x1c0)]('a');_0xbc5ab5['textContent']=_0x218a61,_0xbc5ab5['href']='https://datamb.football/keepers',_0xdb0028[_0x321edf(0x1c5)](_0xbc5ab5);}else{if(_0x919d92===0x2){const _0x5b3796=document[_0x321edf(0x1c0)]('a');_0x5b3796[_0x321edf(0x1eb)]=_0x218a61,_0x5b3796[_0x321edf(0x1a8)]=_0x321edf(0x1a9),_0xdb0028['appendChild'](_0x5b3796);}else{if(_0x919d92>=0x7&&_0x919d92<=0xd){_0x218a61=parseFloat(_0x218a61)*0x64;const _0x1869d8=Math[_0x321edf(0x1e9)](_0x218a61),_0x31be57=_0x1869d8%0xa;let _0x5568b1='th';if(_0x31be57===0x1&&_0x1869d8!==0xb)_0x5568b1='st';else{if(_0x31be57===0x2&&_0x1869d8!==0xc)_0x5568b1='nd';else _0x31be57===0x3&&_0x1869d8!==0xd&&(_0x5568b1='rd');}_0x218a61=_0x1869d8+_0x5568b1+_0x321edf(0x1ae);}[0x1,0x2,0x3,0x4,0x5,0x6,0xe][_0x321edf(0x1c4)](_0x919d92)&&_0xdb0028[_0x321edf(0x1e8)][_0x321edf(0x1ed)](_0x321edf(0x198));_0xdb0028[_0x321edf(0x1eb)]=_0x218a61,_0xdb0028[_0x321edf(0x1e8)][_0x321edf(0x1ed)](_0xa1698c);if([0x7,0x8,0x9,0xa,0xb,0xc,0xd][_0x321edf(0x1c4)](_0x919d92)){const _0x5f59d7=parseFloat(_0x218a61);if(_0x5f59d7>=0x4b&&_0x5f59d7<=0x64)_0xdb0028[_0x321edf(0x1e8)][_0x321edf(0x1ed)](_0x321edf(0x1d5));else _0x5f59d7>=0x0&&_0x5f59d7<=0x19&&_0xdb0028[_0x321edf(0x1e8)][_0x321edf(0x1ed)](_0x321edf(0x1cb));}}}_0x157c9c['appendChild'](_0xdb0028),_0x1da9ed[_0x321edf(0x1c5)](_0x157c9c);}!_0x9e1c8d&&_0x336039[_0x321edf(0x1c5)](_0x1da9ed);const _0x19de36=dataArray[_0x4e2351][_0x321edf(0x1cc)](',\x20');console[_0x321edf(0x1e4)](_0x19de36);const _0x12374a=0xbe,_0x7d3272=[0x0,0x0],_0x55b974=[0x0,0x2*Math['PI']/0x7,0x4*Math['PI']/0x7,0x6*Math['PI']/0x7,0x8*Math['PI']/0x7,0xa*Math['PI']/0x7,0xc*Math['PI']/0x7];function _0x4a728c(_0x258409,_0x548964){const _0x19f214=_0x321edf;let _0x578317=_0x55b974[_0x258409-0x1];_0x578317+=0x2*Math['PI']/0x7*0.2;const _0x489cc1=0xbe*_0x548964*Math[_0x19f214(0x1e5)](_0x578317),_0xd4a6b2=0xbe*_0x548964*Math['sin'](_0x578317);return{'x':_0x489cc1,'y':_0xd4a6b2};}const _0x1b512a=document[_0x321edf(0x1d7)](_0x321edf(0x199)),_0x5025b0=_0x1b512a[_0x321edf(0x1c5)](document['createElementNS'](_0x321edf(0x19c),'g'));_0x5025b0[_0x321edf(0x1bb)](_0x321edf(0x1ac),_0x321edf(0x1a6)),_0x5025b0[_0x321edf(0x19b)]='';const _0x28a8ac=[],_0x2a72fe=_0x19de36['split'](',');for(let _0x4a2a13=0x7;_0x4a2a13<0xe;_0x4a2a13++){_0x28a8ac[_0x321edf(0x1aa)]({'axis':_0x4a2a13-0x6,'value':parseFloat(_0x2a72fe[_0x4a2a13])});}const _0x4bbbdf=_0x28a8ac[_0x321edf(0x1ea)](({axis:_0x1ba902,value:_0x3b6db6})=>{const {x:_0x3ae207,y:_0x22a06e}=_0x4a728c(_0x1ba902,_0x3b6db6);return _0x3ae207+','+_0x22a06e;})[_0x321edf(0x1cc)]('\x20'),_0x1ff285=document[_0x321edf(0x1cd)](_0x321edf(0x19c),_0x321edf(0x1de));_0x1ff285[_0x321edf(0x1bb)](_0x321edf(0x19a),_0x321edf(0x1c7)+_0xa1698c),_0x1ff285[_0x321edf(0x1bb)](_0x321edf(0x1b1),_0x4bbbdf+'\x20'+_0x4bbbdf[_0x321edf(0x1a1)]('\x20')[0x0]),_0x1ff285[_0x321edf(0x1bb)](_0x321edf(0x1bd),'3'),_0x1ff285[_0x321edf(0x1bb)](_0x321edf(0x1c3),_0x321edf(0x1e0)),_0x5025b0[_0x321edf(0x1c5)](_0x1ff285);const _0x436cb8=document[_0x321edf(0x1cd)](_0x321edf(0x19c),_0x321edf(0x1e6));_0x436cb8['setAttribute'](_0x321edf(0x19a),'radarPolygon\x20'+_0xa1698c),_0x436cb8[_0x321edf(0x1bb)](_0x321edf(0x1b1),_0x4bbbdf),_0x436cb8[_0x321edf(0x1d8)][_0x321edf(0x1b9)]='0.2',_0x5025b0[_0x321edf(0x1c5)](_0x436cb8),_0x28a8ac[_0x321edf(0x1b4)](({axis:_0x2ef318,value:_0x3333ae})=>{const _0x43f5f4=_0x321edf,{x:_0x363497,y:_0x38cebc}=_0x4a728c(_0x2ef318,_0x3333ae),_0x46e9b3=document[_0x43f5f4(0x1cd)]('http://www.w3.org/2000/svg',_0x43f5f4(0x19f));_0x46e9b3['setAttribute'](_0x43f5f4(0x19a),_0x43f5f4(0x1d1)+_0xa1698c),_0x46e9b3[_0x43f5f4(0x1d8)][_0x43f5f4(0x1b9)]=_0x43f5f4(0x1e7),_0x46e9b3['setAttribute']('r','6'),_0x46e9b3[_0x43f5f4(0x1bb)]('cx',_0x363497),_0x46e9b3[_0x43f5f4(0x1bb)]('cy',_0x38cebc),_0x5025b0[_0x43f5f4(0x1c5)](_0x46e9b3);});}function toggleFilling(){const _0x3ba223=_0x370593,_0xc3ed08=document[_0x3ba223(0x1d0)]('.radarPolygon');_0xc3ed08['forEach'](_0x21a59f=>{const _0x2f0d54=_0x3ba223;_0x21a59f[_0x2f0d54(0x1d8)][_0x2f0d54(0x1c3)]=_0x21a59f[_0x2f0d54(0x1d8)][_0x2f0d54(0x1c3)]?'':_0x2f0d54(0x1e0);});}const teamNames=new Set();function createTableForTeam1(){const _0x4c231f=_0x370593,_0xa4e511=document[_0x4c231f(0x1b5)](_0x4c231f(0x1e1)),_0x179d5c=document[_0x4c231f(0x1b5)](_0x4c231f(0x1a0)),_0x376fe9=document[_0x4c231f(0x1b5)](_0x4c231f(0x1af)),_0xa43e63=document[_0x4c231f(0x1c0)]('ul');_0xa43e63[_0x4c231f(0x1d8)][_0x4c231f(0x19d)]=_0x4c231f(0x1d2),_0xa43e63[_0x4c231f(0x1d8)][_0x4c231f(0x1ec)]=_0x4c231f(0x1e0),_0xa43e63[_0x4c231f(0x1d8)][_0x4c231f(0x1c6)]=_0x4c231f(0x1b8),_0x376fe9[_0x4c231f(0x1c5)](_0xa43e63);let _0x907f28=0x0;_0x179d5c[_0x4c231f(0x1e3)](_0x4c231f(0x1ab),function(){const _0x34b600=_0x4c231f,_0x2becbc=_0xa4e511[_0x34b600(0x1df)],_0x40ff26=search(_0x2becbc),_0x1b1a5d=document[_0x34b600(0x1d0)](_0x34b600(0x1c1));_0x1b1a5d[_0x34b600(0x1b4)](_0x4dca4c=>{const _0x3778ce=_0x34b600;_0x4dca4c[_0x3778ce(0x1d8)][_0x3778ce(0x1c3)]='';});if(_0x40ff26){const _0x46abf5=parseInt(_0x40ff26[0x0]),_0x5433ef=_0x40ff26[0x1]+'\x20('+_0x40ff26[0x2]+',\x20'+_0x40ff26[0x3]+_0x34b600(0x1d9)+_0x40ff26[0xb]+_0x34b600(0x1d6),_0xb99186=colorClasses[_0x907f28%colorClasses[_0x34b600(0x1a4)]];createTable(_0x5433ef,_0x46abf5-0x1,_0xb99186),_0x907f28++;}});}createTableForTeam1(),searchButton1['click']();
+      
+      
+        </script>
+
+       
+<script>
+
+
+  const allData = [];
+  let isFirstFileProcessed = false;
+  const urls = [
+  'https://datamb.football/database/CURRENT/TOP72425/FW/FW.xlsx',
+
+];
+  
+  const fetchPromises = urls.map(url => fetch(url).then(response => response.arrayBuffer()));
+  
+  Promise.all(fetchPromises)
+      .then(responses => {
+          responses.forEach((data, index) => {
+              const url = urls[index]; // Get the URL of the current file being processed
+              const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
+              const sheetName = workbook.SheetNames[0];
+              const sheet = workbook.Sheets[sheetName];
+              const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+  
+              // Perform transformations
+              // 1. Cut column C and paste it to the end
+              const columnC = jsonData.map(row => row[2]);
+              jsonData.forEach((row, index) => row.push(columnC[index]));
+              jsonData.forEach(row => row.splice(2, 1));
+  
+              // 2. Delete specified columns
+              const columnsToDelete = [27, 28, 29, 30, 59, 61, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85];
+              columnsToDelete.sort((a, b) => b - a); // Sort in descending order
+              columnsToDelete.forEach(col => {
+                  jsonData.forEach(row => row.splice(col, 1));
+              });
+  
+              // 3. Insert new columns and fill with appropriate values
+              if (url === 'https://datamb.football/database/CURRENT/TOP72425/FW/FW.xlsx' && !isFirstFileProcessed) {
+                  // Include header only for the first file ('gk4.xlsx')
+                  jsonData.forEach(row => row.unshift(null)); // Insert empty column at the beginning
+                  jsonData[0][0] = "ID"; // Set header for the new column
+                  isFirstFileProcessed = true; // Mark the first file as processed
+              } else {
+                  // Exclude header for all other files
+                  jsonData.forEach(row => row.unshift(undefined)); // Insert undefined at the beginning
+              }
+  
+              // Fill ID column
+              for (let i = 1; i < jsonData.length; i++) {
+                  jsonData[i][0] = i;
+              }
+  
+              // 4. Replace ", m" with " m" and ", %" with " %"
+              jsonData.forEach(row => {
+                  for (let i = 0; i < row.length; i++) {
+                      if (typeof row[i] === 'string') {
+                          row[i] = row[i].replace(', m', ' m').replace(', %', ' %');
+                      }
+                  }
+              });
+  
+              // 5. Collect the transformed data (excluding header for non-first 'gk4.xlsx')
+              allData.push(...(url === 'https://datamb.football/database/CURRENT/TOP72425/FW/FW.xlsx' ? jsonData : jsonData.slice(1)));
+          });
+  const leagues = {
+  
+     
+"Liga Portugal": [
+"Porto", "Benfica", "Sporting CP", "Sporting Braga", "Vitória Guimarães", "Gil Vicente", "Farense", "Moreirense", "Nacional", "Arouca", "Estoril", "Rio Ave", "Santa Clara", "Boavista", "Casa Pia AC", "Famalicão", "Estrela Amadora", "AVS", "AVS ",
+],
+
+"Ligue 1": [
+"PSG", "Lille", "Nice", "Lens", "Nantes", "Reims", "Olympique Lyonnais", "Monaco", "Olympique Marseille", "Brest", "Saint-Étienne", "Montpellier", "Angers SCO", "Le Havre", "Rennes", "Auxerre", "Strasbourg", "Toulouse", 
+],
+
+"Premier League": [
+"Manchester City", "Tottenham Hotspur", "Arsenal", "Manchester United", "Aston Villa", "Liverpool", "Southampton", "Everton", "Chelsea", "Brighton", "Newcastle United", "Wolverhampton Wanderers", "Fulham", "Crystal Palace", "Brentford", "Bournemouth", "West Ham United", "Leicester City", "Nottingham Forest", "Ipswich Town", "Wolverhampton",
+],
+
+"Bundesliga": [
+"Borussia Dortmund", "Stuttgart", "Wolfsburg", "Bayer Leverkusen", "Borussia M'gladbach", "Augsburg", "Union Berlin", "Eintracht Frankfurt", "Bayern München", "Hoffenheim", "Mainz 05", "Werder Bremen", "RB Leipzig", "St. Pauli", "Holstein Kiel", "Freiburg", "Heidenheim", "Bochum", "Borussia Mgladbach",
+],
+
+"Eredivisie": [
+"PSV", "Feyenoord", "Sparta Rotterdam", "Twente", "Utrecht", "Groningen", "PEC Zwolle", "Almere City", "NAC Breda", "NEC", "Fortuna Sittard", "Go Ahead Eagles", "Heerenveen", "Willem II", "Heracles", "AZ", "RKC Waalwijk", "Ajax",
+],
+
+"La Liga": [
+"Valencia", "Atlético Madrid", "Barcelona", "Real Madrid", "Real Sociedad", "Real Betis", "Osasuna", "Deportivo Alavés", "Getafe", "Athletic Bilbao", "Girona", "Mallorca", "Villarreal", "Real Valladolid", "Rayo Vallecano", "Leganés", "Sevilla", "Las Palmas", "Celta de Vigo", "Espanyol",
+],
+
+"Serie A": [
+"Milan", "Juventus", "Atalanta", "Lazio", "Napoli", "Roma", "Monza", "Internazionale", "Lecce", "Torino", "Parma", "Udinese", "Genoa", "Hellas Verona", "Bologna", "Fiorentina", "Cagliari", "Venezia", "Como", "Empoli", 
+],
+
+  
+  };
+  
+  function getTeamLeague(team) {
+              for (const [league, teams] of Object.entries(leagues)) {
+                  if (teams.includes(team)) {
+                      return league;
+                  }
+              }
+              return "Unknown League";
+          }
+  
+          const outputLines = [];
+          allData.forEach(row => {
+              if (row.length >= 3) {
+                  const team = row[2];
+                  const league = getTeamLeague(team);
+                  row[2] = league; // Replace the third element with the league information
+                  outputLines.push(row.join(",")); // Join the modified parts back into a line
+              } else {
+                  // Handle rows that don't have at least 3 elements as needed
+                  outputLines.push(row.join(","));
+              }
+          });
+  
+          const output_data = outputLines.join("\n");
+  
+          // Concatenate the extra header row with the fetched CSV data
+          let csvData2 = output_data;
+  
+          // Replace all '\n' characters with actual new rows in the CSV
+          csvData2 = csvData2.split('\\n').join('\n');
+  
+  
+  
+          
+          var rows = csvData2.trim().split('\n');
+          var header = rows[0].split(',');
+          var data = rows.slice(1).map(function(row) {
+           return row.split(',').map(function(d, i) {
+             if (i >= 3) { // Assuming columns 2 and onwards contain numeric values
+               return parseFloat(d);
+             } else {
+               return d;
+             }
+           });
+          });
+          
+           var margin = { top: 40, right: 80, bottom: 100, left: 100 };
+           var width = 620 - margin.left - margin.right;
+           var height = 415 - margin.top - margin.bottom;
+          
+          var medianLinesVisible = false;
+          
+          
+          var container = d3.select("body")
+           .append("div")
+           .style("position", "relative");
+           
+          
+          var selectX = container.append("select")
+           .attr("id", "select-x")
+           .on("change", updateChart)
+           .style("position", "absolute")
+           .style("left", "80px")
+           .style("top", "0px");
+           
+          
+          var selectY = container.append("select")
+           .attr("id", "select-y")
+           .on("change", updateChart)
+           .style("position", "absolute")
+           .style("left", "330px")
+           .style("top", "0px");
+          
+          
+          var xMedian = d3.median(data, function(d) { return d[header.indexOf(xMetric)]; });
+          var yMedian = d3.median(data, function(d) { return d[header.indexOf(yMetric)]; });
+          
+          
+          var names = data.map(function(row) {
+           return row[1];
+          });
+          
+          
+           header.slice(34).forEach(function(metric) {
+             selectX.append("option")
+               .text(metric)
+               .attr("value", metric);
+             });
+           header.slice(29).forEach(function(metric) {
+             selectY.append("option")
+               .text(metric)
+               .attr("value", metric);
+             });
+          
+           var svg = d3.select("#scatter-plot")
+             .attr("width", width + margin.left + margin.right)
+             .attr("height", height + margin.top + margin.bottom)
+             .append("g")
+             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+          
+           var xMetric = header[6];
+           var yMetric = header[8];
+          
+           var xScale = d3.scaleLinear()
+             .domain([0, d3.max(data, function(d) { return d[3]; })])
+             .range([0, width]);
+           var yScale = d3.scaleLinear()
+             .domain([0, d3.max(data, function(d) { return d[3]; })])
+             .range([height, 0]);
+          
+          var xAxis = d3.axisBottom(xScale)
+           .tickSize(0); 
+          var yAxis = d3.axisLeft(yScale)
+           .tickSize(0); 
+          
+          var xExtent = d3.extent(data, function(d) { return d[header.indexOf(xMetric)]; });
+          var yExtent = d3.extent(data, function(d) { return d[header.indexOf(yMetric)]; });
+          
+          svg.append("g")
+           .attr("transform", "translate(0," + height + ")")
+           .call(xAxis)
+           .selectAll("text")
+           .remove();
+          
+          svg.append("g")
+           .call(yAxis)
+           .selectAll("text")
+           .remove();
+          
+          svg.append("text")
+           .attr("class", "x-label")
+           .attr("text-anchor", "end")
+           .attr("x", width)
+           .attr("y", height + margin.top)
+           .text(header[3])
+           .style("font-family", "Arial")
+           .style("font-size", "12px");
+          
+          
+          svg.append("text")
+           .attr("class", "y-label")
+           .attr("text-anchor", "end")
+           .attr("transform", "rotate(-90)")
+           .attr("y", -35)
+           .attr("x", 0)
+           .text(header[3])
+           .style("font-family", "Arial")
+           .style("font-size", "12px");
+          
+          
+          svg.append("g")
+           .attr("class", "x-axis")
+           .attr("transform", "translate(0," + height + ")")
+           .call(d3.axisBottom(xScale).tickSize(0));
+          
+          svg.append("g")
+           .attr("class", "y-axis")
+           .call(d3.axisLeft(yScale).tickSize(0));
+          
+          
+          var clickedCircles = []; // array to keep track of clicked circles
+          var filteredData; // declare filteredData in a higher scope
+          var filteredNames; // declare filteredNames in a higher scope
+          var medianLinesVisible = true;
+          
+          var circles = svg.selectAll("circle")
+           .data(data)
+           .enter()
+           .append("circle")
+           .attr("cx", function(d) { return xScale(d[header.indexOf(xMetric)]); })
+           .attr("cy", function(d) { return yScale(d[header.indexOf(yMetric)]); })
+           .attr("r", 6)
+           .style("fill", "steelblue")
+           .on("click", function(d, i) {
+             var clickedIndex = clickedCircles.indexOf(i);
+             if (clickedIndex === -1) {
+               // circle is not already clicked
+               clickedCircles.push(i); // add to clickedCircles array
+               d3.select(this)
+                 .classed("clicked", true) // apply the "clicked" class
+                 .classed("hovered", false)
+                 .style("fill", "red");
+          svg.append("text")
+            .attr("x", xScale(d[header.indexOf(xMetric)]) - 20)
+            .attr("y", yScale(d[header.indexOf(yMetric)]) + 20)
+            .text(names[i])
+            .classed("player-name", true)
+            .style("font-family", "Arial")
+            .style("font-size", "12px");
+          
+            
+             }
+           });
+          
+          
+          
+          // X-axis median line
+          var xMedianLine = svg.append("line")
+           .attr("class", "x-median")
+           .attr("x1", xScale(xMedian))
+           .attr("y1", 0)
+           .attr("x2", xScale(xMedian))
+           .attr("y2", height)
+           .style("stroke", "red")
+           .style("stroke-dasharray", "4")
+           .style("display", medianLinesVisible ? "block" : "none");
+          
+          // Y-axis median line
+          var yMedianLine = svg.append("line")
+           .attr("class", "y-median")
+           .attr("x1", 0)
+           .attr("y1", yScale(yMedian))
+           .attr("x2", width)
+           .attr("y2", yScale(yMedian))
+           .style("stroke", "red")
+           .style("stroke-dasharray", "4")
+           .style("display", medianLinesVisible ? "block" : "none");
+          
+          
+           updateChart();
+          
+          function updateChart() {
+           xMetric = selectX.property("value");
+           yMetric = selectY.property("value");
+           var selectedLeague = document.getElementById("select-league").value;
+          
+           // Filter data based on the selected league
+          
+           if (selectedLeague !== "all") {
+             filteredData = data.filter(function(d) {
+               return d[header.indexOf('Top 7 Leagues')] === selectedLeague;
+             });
+             filteredNames = names.filter(function(name, i) {
+               return data[i][header.indexOf('Top 7 Leagues')] === selectedLeague;
+             });
+           } else {
+             filteredData = data;
+             filteredNames = names;
+           }
+          
+           // Update scales with filtered data
+           // Update scales with filtered data
+           xScale.domain(d3.extent(filteredData, function(d) { return d[header.indexOf(xMetric)]; })).nice();
+           yScale.domain(d3.extent(filteredData, function(d) { return d[header.indexOf(yMetric)]; })).nice();
+          
+           // Toggle median lines visibility
+           if (medianLinesVisible) {
+             // Calculate the new medians based on the selected metrics
+             var xMedian = d3.median(filteredData, function(d) { return d[header.indexOf(xMetric)]; });
+             var yMedian = d3.median(filteredData, function(d) { return d[header.indexOf(yMetric)]; });
+          
+             // X-axis median line
+             xMedianLine
+               .attr("x1", xScale(xMedian))
+               .attr("y1", 0)
+               .attr("x2", xScale(xMedian))
+               .attr("y2", height)
+               .style("display", "block");
+          
+             // Y-axis median line
+             yMedianLine
+               .attr("x1", 0)
+               .attr("y1", yScale(yMedian))
+               .attr("x2", width)
+               .attr("y2", yScale(yMedian))
+               .style("display", "block");
+           } else {
+             xMedianLine.style("display", "none");
+             yMedianLine.style("display", "none");
+           }
+          
+           svg.select(".x-label")
+             .text(xMetric);
+          
+           svg.select(".y-label")
+             .text(yMetric);
+          
+            var circles = svg.selectAll("circle")
+             .data(filteredData, function(d) {
+               return d[0]; // Use unique identifier as the data key
+             });
+          
+           circles.exit().remove();
+           circles.enter()
+           .append("circle")
+           .merge(circles)
+           .attr("cx", function (d) {
+             return xScale(d[header.indexOf(xMetric)]);
+           })
+           .attr("cy", function (d) {
+             return yScale(d[header.indexOf(yMetric)]);
+           })
+           .attr("r", 6)
+           .style("fill", function (d) {
+             return clickedCircles.includes(d[0]) ? "red" : "steelblue";
+           })
+           .classed("highlighted", false)
+           .classed("clicked", function (d) {
+             return clickedCircles.includes(d[0]);
+           })
+           .on("click", null) // Disable click event for users
+           .on("mouseover", function (d) {
+             d3.select(this)
+             tooltip.transition()
+               .duration(200)
+               .style("opacity", 0.9);
+          
+             tooltip.html(filteredNames[filteredData.indexOf(d)] + "<br/>" + xMetric + ": " + d[header.indexOf(xMetric)] + "<br/>" + yMetric + ": " + d[header.indexOf(yMetric)])
+               .style("left", (d3.event.pageX + 10) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+           })
+           .on("mouseout", function (d) {
+             var circle = d3.select(this);
+             var index = clickedCircles.indexOf(d[0]);
+          
+             if (!circle.classed("clicked")) {
+               circle
+                 .classed("hovered", false)
+                 .style("fill", "steelblue");
+             }
+          
+             tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+           });
+          
+          
+           // Display player names for clicked circles
+           var clickedCirclesData = filteredData.filter(function(d) {
+             return clickedCircles.includes(d[0]);
+           });
+          
+           var playerNames = svg.selectAll(".player-name")
+             .data(clickedCirclesData, function(d) {
+               return d[0]; // Use unique identifier as the data key
+             });
+          
+           playerNames.exit().remove();
+          
+           playerNames.enter()
+             .append("text")
+             .attr("class", "player-name")
+             .merge(playerNames)
+             .attr("x", function(d) {
+               return xScale(d[header.indexOf(xMetric)]) - 20;
+             })
+             .attr("y", function(d) {
+               return yScale(d[header.indexOf(yMetric)]) + 20;
+             })
+             .style("font-family", "Arial")
+             .style("font-size", "12px")
+             .text(function(d) {
+               return filteredNames[filteredData.indexOf(d)];
+             });
+          
+           svg.select(".x-axis")
+             .transition()
+             .duration(1000)
+             .call(d3.axisBottom(xScale).tickSize(0));
+          
+           svg.select(".y-axis")
+             .transition()
+             .duration(1000)
+             .call(d3.axisLeft(yScale).tickSize(0));
+          }
+          
+          function circleClick(d, i) {
+           var circle = d3.select(this);
+           var identifier = d[0]; // Unique identifier of the data point
+          
+           var index = clickedCircles.indexOf(identifier);
+          
+           if (index > -1) {
+             circle
+               .classed("clicked", false)
+               .style("fill", "steelblue");
+          
+             clickedCircles.splice(index, 1);
+          
+             // Remove the player name text element
+             svg.select(".player-name-" + identifier).remove();
+           } else {
+             circle
+               .classed("clicked", true)
+               .style("fill", "red");
+          
+             clickedCircles.push(identifier);
+          
+             // Append the player name text element
+             svg.append("text")
+               .attr("class", "player-name player-name-" + identifier)
+               .attr("x", xScale(d[header.indexOf(xMetric)]) - 20)
+               .attr("y", yScale(d[header.indexOf(yMetric)]) + 20)
+               .style("font-family", "Arial")
+               .style("font-size", "12px")
+               .text(filteredNames[filteredData.indexOf(d)]);
+           }
+          
+           updateClickedPlayerName(xMetric, yMetric);
+          
+           circles.on("click", function(d, i) {
+             var clickedCircle = d3.select(this);
+             var circleName = filteredNames[i];
+          
+             // Check if the circle is already clicked
+             var isClicked = clickedCircles.includes(circleName);
+          
+             if (isClicked) {
+               // Remove the circle from clickedCircles and reset its style
+               clickedCircles = clickedCircles.filter(function(name) {
+                 return name !== circleName;
+               });
+               clickedCircle
+                 .style("fill", "steelblue")
+                 .classed("clicked", false);
+             } else {
+               // Add the circle to clickedCircles and update its style
+               clickedCircles.push(circleName);
+               clickedCircle
+                 .style("fill", "red")
+                 .classed("clicked", true);
+             }
+          
+             // Update the chart based on the clicked circles
+             updateChart();
+           });
+          
+           // Restore the style for previously clicked circles
+           circles.each(function(d, i) {
+             var circleName = filteredNames[i];
+             var clicked = clickedCircles.includes(circleName);
+             d3.select(this).classed("clicked", clicked);
+           });
+          
+          
+          }
+          
+          // Set the default search value
+          var defaultSearchValue = "Jaime Mata";
+          
+          // Find the index of the default search value in the filteredNames array
+          var defaultSearchIndex = filteredNames.indexOf(defaultSearchValue);
+          
+          // Check if the default search value exists in the filteredNames array
+          if (defaultSearchIndex !== -1) {
+           // Get the dot corresponding to the default search value
+           var defaultSearchDot = circles.filter(function(d, i) {
+             return i === defaultSearchIndex;
+           });
+          
+           // Trigger a click event on the default search dot
+           defaultSearchDot.each(circleClick);
+          }
+          
+        })
+        .catch(error => {
+            console.error('Error fetching or processing data:', error);
+        });
+ </script>
+ 
+ 
+ 
+ <script>
+ 
+  const allData2 = [];
+  let isFirstFileProcessed2 = false;
+  
+  const urls2 = [
+  'https://datamb.football/database/CURRENT/TOP72425/FW/FW.xlsx',
+
+];
+  
+  const fetchPromises2 = urls2.map(url => fetch(url).then(response => response.arrayBuffer()));
+  
+  Promise.all(fetchPromises2)
+      .then(responses => {
+          responses.forEach((data, index) => {
+              const url = urls2[index]; // Get the URL of the current file being processed
+              const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
+              const sheetName = workbook.SheetNames[0];
+              const sheet = workbook.Sheets[sheetName];
+              const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+  
+              // Perform transformations
+              // 1. Cut column C and paste it to the end
+              const columnC = jsonData.map(row => row[2]);
+              jsonData.forEach((row, index) => row.push(columnC[index]));
+              jsonData.forEach(row => row.splice(2, 1));
+  
+              // 2. Delete specified columns
+              const columnsToDelete = [27, 28, 29, 30, 59, 61, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85];
+              columnsToDelete.sort((a, b) => b - a); // Sort in descending order
+              columnsToDelete.forEach(col => {
+                  jsonData.forEach(row => row.splice(col, 1));
+              });
+  
+              // 3. Insert new columns and fill with appropriate values
+              if (url === 'https://datamb.football/database/CURRENT/TOP72425/FW/FW.xlsx' && !isFirstFileProcessed) {
+                  // Include header only for the first file ('gk4.xlsx')
+                  jsonData.forEach(row => row.unshift(null)); // Insert empty column at the beginning
+                  jsonData[0][0] = "ID"; // Set header for the new column
+                  isFirstFileProcessed = true; // Mark the first file as processed
+              } else {
+                  // Exclude header for all other files
+                  jsonData.forEach(row => row.unshift(undefined)); // Insert undefined at the beginning
+              }
+  
+              // Fill ID column
+              for (let i = 1; i < jsonData.length; i++) {
+                  jsonData[i][0] = i;
+              }
+  
+              // 4. Replace ", m" with " m" and ", %" with " %"
+              jsonData.forEach(row => {
+                  for (let i = 0; i < row.length; i++) {
+                      if (typeof row[i] === 'string') {
+                          row[i] = row[i].replace(', m', ' m').replace(', %', ' %');
+                      }
+                  }
+              });
+  
+              // 5. Collect the transformed data (excluding header for non-first 'gk4.xlsx')
+              allData2.push(...(url === 'https://datamb.football/database/CURRENT/TOP72425/FW/FW.xlsx' ? jsonData : jsonData.slice(1)));
+          });
+  
+  const leagues = {
+  
+"Liga Portugal": [
+"Porto", "Benfica", "Sporting CP", "Sporting Braga", "Vitória Guimarães", "Gil Vicente", "Farense", "Moreirense", "Nacional", "Arouca", "Estoril", "Rio Ave", "Santa Clara", "Boavista", "Casa Pia AC", "Famalicão", "Estrela Amadora", "AVS", "AVS ",
+],
+
+"Ligue 1": [
+"PSG", "Lille", "Nice", "Lens", "Nantes", "Reims", "Olympique Lyonnais", "Monaco", "Olympique Marseille", "Brest", "Saint-Étienne", "Montpellier", "Angers SCO", "Le Havre", "Rennes", "Auxerre", "Strasbourg", "Toulouse", 
+],
+
+"Premier League": [
+"Manchester City", "Tottenham Hotspur", "Arsenal", "Manchester United", "Aston Villa", "Liverpool", "Southampton", "Everton", "Chelsea", "Brighton", "Newcastle United", "Wolverhampton Wanderers", "Fulham", "Crystal Palace", "Brentford", "Bournemouth", "West Ham United", "Leicester City", "Nottingham Forest", "Ipswich Town", "Wolverhampton",
+],
+
+"Bundesliga": [
+"Borussia Dortmund", "Stuttgart", "Wolfsburg", "Bayer Leverkusen", "Borussia M'gladbach", "Augsburg", "Union Berlin", "Eintracht Frankfurt", "Bayern München", "Hoffenheim", "Mainz 05", "Werder Bremen", "RB Leipzig", "St. Pauli", "Holstein Kiel", "Freiburg", "Heidenheim", "Bochum", "Borussia Mgladbach",
+],
+
+"Eredivisie": [
+"PSV", "Feyenoord", "Sparta Rotterdam", "Twente", "Utrecht", "Groningen", "PEC Zwolle", "Almere City", "NAC Breda", "NEC", "Fortuna Sittard", "Go Ahead Eagles", "Heerenveen", "Willem II", "Heracles", "AZ", "RKC Waalwijk", "Ajax",
+],
+
+"La Liga": [
+"Valencia", "Atlético Madrid", "Barcelona", "Real Madrid", "Real Sociedad", "Real Betis", "Osasuna", "Deportivo Alavés", "Getafe", "Athletic Bilbao", "Girona", "Mallorca", "Villarreal", "Real Valladolid", "Rayo Vallecano", "Leganés", "Sevilla", "Las Palmas", "Celta de Vigo", "Espanyol",
+],
+
+"Serie A": [
+"Milan", "Juventus", "Atalanta", "Lazio", "Napoli", "Roma", "Monza", "Internazionale", "Lecce", "Torino", "Parma", "Udinese", "Genoa", "Hellas Verona", "Bologna", "Fiorentina", "Cagliari", "Venezia", "Como", "Empoli", 
+],
+
+  };
+  
+  function getTeamLeague2(team) {
+              for (const [league, teams] of Object.entries(leagues)) {
+                  if (teams.includes(team)) {
+                      return league;
+                  }
+              }
+              return "Unknown League";
+          }
+  
+          const outputLines2 = [];
+          allData2.forEach(row => {
+              if (row.length >= 3) {
+                  const team = row[2];
+                  const league = getTeamLeague2(team);
+                  row[2] = league; // Replace the third element with the league information
+                  outputLines2.push(row.join(",")); // Join the modified parts back into a line
+              } else {
+                  // Handle rows that don't have at least 3 elements as needed
+                  outputLines2.push(row.join(","));
+              }
+          });
+  
+          const output_data2 = outputLines2.join("\n");
+  
+          // Concatenate the extra header row with the fetched CSV data
+          let csvData3 = output_data2;
+  
+          // Replace all '\n' characters with actual new rows in the CSV
+          csvData3 = csvData3.split('\\n').join('\n');
+  
+  
+  
+          
+var rows = csvData3.trim().split('\n');
+var header = rows[0].split(',');
+var data = rows.slice(1).map(function(row) {
+return row.split(',').map(function(d, i) {
+  if (i >= 3) { // Assuming columns 2 and onwards contain numeric values
+    return parseFloat(d);
+  } else {
+    return d;
+  }
+});
+});
+
+var margin = { top: 40, right: 80, bottom: 100, left: 100 };
+var width = 620 - margin.left - margin.right;
+var height = 415 - margin.top - margin.bottom;
+
+var medianLinesVisible = false;
+
+
+var container = d3.select("body")
+.append("div")
+.style("position", "relative");
+
+
+var selectX = container.append("select")
+.attr("id", "select-x")
+.on("change", updateChart)
+.style("position", "absolute")
+.style("left", "80px")
+.style("top", "0px");
+
+
+var selectY = container.append("select")
+.attr("id", "select-y")
+.on("change", updateChart)
+.style("position", "absolute")
+.style("left", "330px")
+.style("top", "0px");
+
+
+var xMedian = d3.median(data, function(d) { return d[header.indexOf(xMetric)]; });
+var yMedian = d3.median(data, function(d) { return d[header.indexOf(yMetric)]; });
+
+
+var names = data.map(function(row) {
+return row[1];
+});
+
+
+header.slice(20).forEach(function(metric) {
+  selectX.append("option")
+    .text(metric)
+    .attr("value", metric);
+  });
+header.slice(53).forEach(function(metric) {
+  selectY.append("option")
+    .text(metric)
+    .attr("value", metric);
+  });
+
+var svg = d3.select("#scatter-plot-2")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var xMetric = header[63];
+var yMetric = header[32];
+
+var xScale = d3.scaleLinear()
+  .domain([0, d3.max(data, function(d) { return d[3]; })])
+  .range([0, width]);
+var yScale = d3.scaleLinear()
+  .domain([0, d3.max(data, function(d) { return d[3]; })])
+  .range([height, 0]);
+
+var xAxis = d3.axisBottom(xScale)
+.tickSize(0); 
+var yAxis = d3.axisLeft(yScale)
+.tickSize(0); 
+
+var xExtent = d3.extent(data, function(d) { return d[header.indexOf(xMetric)]; });
+var yExtent = d3.extent(data, function(d) { return d[header.indexOf(yMetric)]; });
+
+svg.append("g")
+.attr("transform", "translate(0," + height + ")")
+.call(xAxis)
+.selectAll("text")
+.remove();
+
+svg.append("g")
+.call(yAxis)
+.selectAll("text")
+.remove();
+
+svg.append("text")
+.attr("class", "x-label")
+.attr("text-anchor", "end")
+.attr("x", width)
+.attr("y", height + margin.top)
+.text(header[3])
+.style("font-family", "Arial")
+.style("font-size", "12px");
+
+
+svg.append("text")
+.attr("class", "y-label")
+.attr("text-anchor", "end")
+.attr("transform", "rotate(-90)")
+.attr("y", -35)
+.attr("x", 0)
+.text(header[3])
+.style("font-family", "Arial")
+.style("font-size", "12px");
+
+
+svg.append("g")
+.attr("class", "x-axis")
+.attr("transform", "translate(0," + height + ")")
+.call(d3.axisBottom(xScale).tickSize(0));
+
+svg.append("g")
+.attr("class", "y-axis")
+.call(d3.axisLeft(yScale).tickSize(0));
+
+
+var clickedCircles = []; // array to keep track of clicked circles
+var filteredData; // declare filteredData in a higher scope
+var filteredNames; // declare filteredNames in a higher scope
+var medianLinesVisible = true;
+
+var circles = svg.selectAll("circle")
+.data(data)
+.enter()
+.append("circle")
+.attr("cx", function(d) { return xScale(d[header.indexOf(xMetric)]); })
+.attr("cy", function(d) { return yScale(d[header.indexOf(yMetric)]); })
+.attr("r", 6)
+.style("fill", "steelblue")
+.on("click", function(d, i) {
+  var clickedIndex = clickedCircles.indexOf(i);
+  if (clickedIndex === -1) {
+    // circle is not already clicked
+    clickedCircles.push(i); // add to clickedCircles array
+    d3.select(this)
+      .classed("clicked", true) // apply the "clicked" class
+      .classed("hovered", false)
+      .style("fill", "red");
+svg.append("text")
+ .attr("x", xScale(d[header.indexOf(xMetric)]) - 20)
+ .attr("y", yScale(d[header.indexOf(yMetric)]) + 20)
+ .text(names[i])
+ .classed("player-name", true)
+ .style("font-family", "Arial")
+ .style("font-size", "12px");
+
+ 
+  }
+});
+
+
+
+// X-axis median line
+var xMedianLine = svg.append("line")
+.attr("class", "x-median")
+.attr("x1", xScale(xMedian))
+.attr("y1", 0)
+.attr("x2", xScale(xMedian))
+.attr("y2", height)
+.style("stroke", "red")
+.style("stroke-dasharray", "4")
+.style("display", medianLinesVisible ? "block" : "none");
+
+// Y-axis median line
+var yMedianLine = svg.append("line")
+.attr("class", "y-median")
+.attr("x1", 0)
+.attr("y1", yScale(yMedian))
+.attr("x2", width)
+.attr("y2", yScale(yMedian))
+.style("stroke", "red")
+.style("stroke-dasharray", "4")
+.style("display", medianLinesVisible ? "block" : "none");
+
+
+updateChart();
+
+function updateChart() {
+xMetric = selectX.property("value");
+yMetric = selectY.property("value");
+var selectedLeague = document.getElementById("select-league").value;
+
+// Filter data based on the selected league
+
+if (selectedLeague !== "all") {
+  filteredData = data.filter(function(d) {
+    return d[header.indexOf('Top 7 Leagues')] === selectedLeague;
+  });
+  filteredNames = names.filter(function(name, i) {
+    return data[i][header.indexOf('Top 7 Leagues')] === selectedLeague;
+  });
+} else {
+  filteredData = data;
+  filteredNames = names;
+}
+
+// Update scales with filtered data
+// Update scales with filtered data
+xScale.domain(d3.extent(filteredData, function(d) { return d[header.indexOf(xMetric)]; })).nice();
+yScale.domain(d3.extent(filteredData, function(d) { return d[header.indexOf(yMetric)]; })).nice();
+
+// Toggle median lines visibility
+if (medianLinesVisible) {
+  // Calculate the new medians based on the selected metrics
+  var xMedian = d3.median(filteredData, function(d) { return d[header.indexOf(xMetric)]; });
+  var yMedian = d3.median(filteredData, function(d) { return d[header.indexOf(yMetric)]; });
+
+  // X-axis median line
+  xMedianLine
+    .attr("x1", xScale(xMedian))
+    .attr("y1", 0)
+    .attr("x2", xScale(xMedian))
+    .attr("y2", height)
+    .style("display", "block");
+
+  // Y-axis median line
+  yMedianLine
+    .attr("x1", 0)
+    .attr("y1", yScale(yMedian))
+    .attr("x2", width)
+    .attr("y2", yScale(yMedian))
+    .style("display", "block");
+} else {
+  xMedianLine.style("display", "none");
+  yMedianLine.style("display", "none");
+}
+
+svg.select(".x-label")
+  .text(xMetric);
+
+svg.select(".y-label")
+  .text(yMetric);
+
+ var circles = svg.selectAll("circle")
+  .data(filteredData, function(d) {
+    return d[0]; // Use unique identifier as the data key
+  });
+
+circles.exit().remove();
+circles.enter()
+.append("circle")
+.merge(circles)
+.attr("cx", function (d) {
+  return xScale(d[header.indexOf(xMetric)]);
+})
+.attr("cy", function (d) {
+  return yScale(d[header.indexOf(yMetric)]);
+})
+.attr("r", 6)
+.style("fill", function (d) {
+  return clickedCircles.includes(d[0]) ? "red" : "steelblue";
+})
+.classed("highlighted", false)
+.classed("clicked", function (d) {
+  return clickedCircles.includes(d[0]);
+})
+.on("click", null) // Disable click event for users
+.on("mouseover", function (d) {
+  d3.select(this)
+  tooltip.transition()
+    .duration(200)
+    .style("opacity", 0.9);
+
+  tooltip.html(filteredNames[filteredData.indexOf(d)] + "<br/>" + xMetric + ": " + d[header.indexOf(xMetric)] + "<br/>" + yMetric + ": " + d[header.indexOf(yMetric)])
+    .style("left", (d3.event.pageX + 10) + "px")
+    .style("top", (d3.event.pageY - 28) + "px");
+})
+.on("mouseout", function (d) {
+  var circle = d3.select(this);
+  var index = clickedCircles.indexOf(d[0]);
+
+  if (!circle.classed("clicked")) {
+    circle
+      .classed("hovered", false)
+      .style("fill", "steelblue");
+  }
+
+  tooltip.transition()
+    .duration(500)
+    .style("opacity", 0);
+});
+
+
+// Display player names for clicked circles
+var clickedCirclesData = filteredData.filter(function(d) {
+  return clickedCircles.includes(d[0]);
+});
+
+var playerNames = svg.selectAll(".player-name")
+  .data(clickedCirclesData, function(d) {
+    return d[0]; // Use unique identifier as the data key
+  });
+
+playerNames.exit().remove();
+
+playerNames.enter()
+  .append("text")
+  .attr("class", "player-name")
+  .merge(playerNames)
+  .attr("x", function(d) {
+    return xScale(d[header.indexOf(xMetric)]) - 20;
+  })
+  .attr("y", function(d) {
+    return yScale(d[header.indexOf(yMetric)]) + 20;
+  })
+  .style("font-family", "Arial")
+  .style("font-size", "12px")
+  .text(function(d) {
+    return filteredNames[filteredData.indexOf(d)];
+  });
+
+svg.select(".x-axis")
+  .transition()
+  .duration(1000)
+  .call(d3.axisBottom(xScale).tickSize(0));
+
+svg.select(".y-axis")
+  .transition()
+  .duration(1000)
+  .call(d3.axisLeft(yScale).tickSize(0));
+}
+
+function circleClick(d, i) {
+var circle = d3.select(this);
+var identifier = d[0]; // Unique identifier of the data point
+
+var index = clickedCircles.indexOf(identifier);
+
+if (index > -1) {
+  circle
+    .classed("clicked", false)
+    .style("fill", "steelblue");
+
+  clickedCircles.splice(index, 1);
+
+  // Remove the player name text element
+  svg.select(".player-name-" + identifier).remove();
+} else {
+  circle
+    .classed("clicked", true)
+    .style("fill", "red");
+
+  clickedCircles.push(identifier);
+
+  // Append the player name text element
+  svg.append("text")
+    .attr("class", "player-name player-name-" + identifier)
+    .attr("x", xScale(d[header.indexOf(xMetric)]) - 20)
+    .attr("y", yScale(d[header.indexOf(yMetric)]) + 20)
+    .style("font-family", "Arial")
+    .style("font-size", "12px")
+    .text(filteredNames[filteredData.indexOf(d)]);
+}
+
+updateClickedPlayerName(xMetric, yMetric);
+
+circles.on("click", function(d, i) {
+  var clickedCircle = d3.select(this);
+  var circleName = filteredNames[i];
+
+  // Check if the circle is already clicked
+  var isClicked = clickedCircles.includes(circleName);
+
+  if (isClicked) {
+    // Remove the circle from clickedCircles and reset its style
+    clickedCircles = clickedCircles.filter(function(name) {
+      return name !== circleName;
+    });
+    clickedCircle
+      .style("fill", "steelblue")
+      .classed("clicked", false);
+  } else {
+    // Add the circle to clickedCircles and update its style
+    clickedCircles.push(circleName);
+    clickedCircle
+      .style("fill", "red")
+      .classed("clicked", true);
+  }
+
+  // Update the chart based on the clicked circles
+  updateChart();
+});
+
+// Restore the style for previously clicked circles
+circles.each(function(d, i) {
+  var circleName = filteredNames[i];
+  var clicked = clickedCircles.includes(circleName);
+  d3.select(this).classed("clicked", clicked);
+});
+
+
+}
+
+// Set the default search value
+var defaultSearchValue = "Jaime Mata";
+
+// Find the index of the default search value in the filteredNames array
+var defaultSearchIndex = filteredNames.indexOf(defaultSearchValue);
+
+// Check if the default search value exists in the filteredNames array
+if (defaultSearchIndex !== -1) {
+// Get the dot corresponding to the default search value
+var defaultSearchDot = circles.filter(function(d, i) {
+  return i === defaultSearchIndex;
+});
+
+// Trigger a click event on the default search dot
+defaultSearchDot.each(circleClick);
+}
+
+        })
+        .catch(error => {
+            console.error('Error fetching or processing data:', error);
+        });
+ </script>
+
+
+<footer class="footer">
+   
+  <div class="google-play-container">
+
+  <a href='https://play.google.com/store/apps/details?id=com.datamb.datamb.webviewflutter&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'></a>
+<a href='https://apps.apple.com/app/datamb/id6456224067?l=en-GB'><img alt='Download on the App Store' src='https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg'></a></div>
+<div class="logo">
+    <img src="https://i.imgur.com/UurMbGS.png" alt="Jaime Mata football stats and data visuals. 2024/25 Jaime Mata player data profile compared to top 7 league players. Radar comparison and plot charts" />
+  </div>
+
+  <p class="description">DataMB</p>
+  <p class="info">© All Rights Reserved</p>
+  <hr class="divider" />
+  <div class="sub-footer">
+    <nav>
+      <a class="terms" target="_blank" href="https://datamb.football/privacy">Privacy</a>
+      <a class="privacy" target="_blank" href="mailto:datamb.football@gmail.com">Contact</a>
+      <a class="glossary" target="_blank" href="https://datamb.football/glossary">Glossary</a>
+    </nav>
+    <nav>
+      <a target="_blank" href="https://twitter.com/datamb_">
+        <svg width="23" height="22" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      </a>
+    </nav>
+  </div>
+</footer>
+
+
+</body>
+</html>
